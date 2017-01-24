@@ -187,9 +187,9 @@ class BulkImport(luigi.Task):
     time_format = luigi.Parameter(significant=False)
     default_timezone = luigi.Parameter(significant=False, default=None)
     # CSV/TSV options
-    column_header = luigi.BooleanParameter(significant=False, default=False)
+    column_header = luigi.BoolParameter(significant=False, default=False)
     # steps
-    no_commit = luigi.BooleanParameter(default=False)
+    no_commit = luigi.BoolParameter(default=False)
 
     def complete(self):
         client = self.config.get_client()
